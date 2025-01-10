@@ -1,3 +1,66 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://www.sanremigioverona.org/'
+languageCode = 'it-it'
+title = 'CFRV'
+theme = 'alpha-church'
+
+[security]
+    enableInlineShortcodes = true
+
+[menu]
+    [[menu.main]]
+        name = "CFRV"
+        url = "/"
+        weight = 1
+
+    [[menu.main]]
+        name = "Orari"
+        url = "/orari"
+        weight = 2
+
+    [[menu.main]]
+        name = "Chi siamo"
+        url = "/presentazione"
+        weight = 3
+
+    [[menu.main]]
+        name = "Il Coetus"
+        parent = "Chi siamo"
+        url = "/presentazione"
+        weight = 4
+
+    [[menu.main]]
+        name = "Il Sacerdote"
+        parent = "Chi siamo"
+        url = "/celebrante"
+        weight = 5
+
+[params]
+    title = "Coetus Fidelium San Remigio - Verona"
+    subtitle = "Messa Tridentina a Verona"
+    keywords = [""]
+    languageCode = "it"
+    #bible_popups = "faithlife" #faithlife, blb
+    #bible_version = "NRSV-CE"
+    instant_page = true
+    #customCSS = ["example.css"]
+
+    [params.banner]
+        image = "/img/banner.jpg"
+
+    [params.map]
+        service = "osm"
+        latitude = "48.8530"
+        longitude = "2.3498"
+        zoom = "18"
+
+    [[params.links]]
+        service = "Facebook"
+        icon = "fa-facebook"
+        icon_pack = "fab"
+        link = "//facebook.com/"
+
+    [[params.links]]
+        service = "Telegram"
+        icon = "fa-telegram"
+        icon_pack = "fab"
+        link = "//telegram.com/"
