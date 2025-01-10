@@ -1,15 +1,15 @@
 ---
-title: "Celebrante"
+title: "Il Sacerdote"
 subtitle: ""
 date: 2025-01-10
-images: [""]
+images: ["img/don-paolo-poli.jpeg"]
 tags: []
 draft: false
 ---
 
-# Don Paolo Poli
+## Don Paolo Poli
 
-_Sacerdote celebrante al Cimitero Monumentale di Verona_
+### _Sacerdote celebrante al Cimitero Monumentale di Verona_
 
 Nato a Verona nel 1984, viene battezzato nella Chiesa parrocchiale di Gesù Divino Lavoratore, alla periferia della città. Nella stessa parrocchia riceve i Sacramenti della Penitenza, dell’Eucarestia e della Cresima.
 
