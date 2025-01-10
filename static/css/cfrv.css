@@ -1,0 +1,14 @@
+#header img {
+    margin-top: 0.8%;
+    margin-left: 0.8%;
+    width: 5%;
+}
+
+#header a {
+    border-bottom: none;
+}
+
+#banner h2 {
+    text-shadow: 0 0 6px #000;
+    font-weight: 500;
+}
