@@ -49,7 +49,7 @@ theme = 'alpha-church'
 [params]
   title = "Coetus Fidelium San Remigio"
   subtitle = "Liturgia Tridentina a Verona"
-  logo = "/img/logo.png"
+  logo = "/img/logo.jpg"
   keywords = [""]
   languageCode = "it"
   instant_page = true
@@ -82,4 +82,9 @@ theme = 'alpha-church'
   service = "php"
 
 [params.footer]
-  copyright = ["Ad Maiorem Dei Gloriam"]
+  copyright = [
+    "Associazione Coetus Fidelium San Remigio",
+    "Via Orti Manara, 7 - 37121, Verona (VR)",
+    "info@sanremigioverona.org",
+    "Privacy & Cookie Policy: su questo sito non raccogliamo dati degli utenti né usiamo cookie."
+  ]
