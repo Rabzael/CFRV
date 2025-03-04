@@ -21,24 +21,24 @@ theme = 'alpha-church'
 
   [[menu.main]]
     name = "Orari"
-    url = "/orari"
+    url = "./orari"
     weight = 2
 
   [[menu.main]]
     name = "Chi siamo"
-    url = "/presentazione"
+    url = "./presentazione"
     weight = 3
 
   [[menu.main]]
     name = "Il Coetus"
     parent = "Chi siamo"
-    url = "/presentazione"
+    url = "./presentazione"
     weight = 4
 
   [[menu.main]]
     name = "Il Sacerdote"
     parent = "Chi siamo"
-    url = "/celebrante"
+    url = "./celebrante"
     weight = 5
   
   [[menu.main]]
@@ -53,7 +53,7 @@ theme = 'alpha-church'
 
   [[menu.main]]
     name = "Contatti"
-    url = "/contatti"
+    url = "./contatti"
     weight = 7
 
 [params]
