@@ -1,4 +1,4 @@
-baseURL = 'https://www.sanremigioverona.org/'
+baseURL = 'https://www.sanremigioverona.org/nuovo/'
 defaultContentLanguage = 'it'
 theme = 'alpha-church'
 
@@ -42,23 +42,33 @@ theme = 'alpha-church'
     weight = 5
   
   [[menu.main]]
+    name = "Eventi"
+    parent = "Chi siamo"
+    url = "/"
+
+  [[menu.main]]
+    name = "Collegamenti"
+    url = "/"
+    weight = 6
+
+  [[menu.main]]
     name = "Contatti"
     url = "/contatti"
-    weight = 6
+    weight = 7
 
 [params]
   title = "Coetus Fidelium San Remigio"
   subtitle = "Liturgia Tridentina a Verona"
-  logo = "/img/logo.jpg"
+  logo = "./img/logo.jpg"
   keywords = [""]
   languageCode = "it"
   instant_page = true
   #bible_popups = "faithlife" #faithlife, blb
   #bible_version = "NRSV-CE"
-  customCSS = ["/css/cfrv.css"]
+  customCSS = ["./css/cfrv.css"]
 
   [params.banner]
-    image = "/img/cropped-1.jpg"
+    image = "./img/cropped-1.jpg"
 
   [params.map]
     service = "osm"
