@@ -1,0 +1,23 @@
+  <!-- Scripts -->
+  <script src="{{ site.pathPrefix }}js/jquery.min.js"></script>
+  <script src="{{ site.pathPrefix }}js/jquery.dropotron.min.js"></script>
+  <script src="{{ site.pathPrefix }}js/jquery.scrollex.min.js"></script>
+  <script src="{{ site.pathPrefix }}js/browser.min.js"></script>
+  <script src="{{ site.pathPrefix }}js/breakpoints.min.js"></script>
+  <script src="{{ site.pathPrefix }}js/util.js"></script>
+  <script src="{{ site.pathPrefix }}js/main.js"></script>
+  {% if site.instant_page %}
+    <script src="https://instant.page/{{ site.libs.js.instantpage.version }}" type="module" defer integrity="{{ site.libs.js.instantpage.integrity }}" crossorigin="anonymous"></script>
+  {% endif %}
+  {% if page.url != '/' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/{{ site.libs.js.plyr.version }}/plyr.polyfilled.min.js" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (document.querySelector('#player')) {
+          const player = new Plyr('#player', { settings: ['speed'] });
+        }
+      });
+    </script>
+  {% endif %}
+  </body>
+</html>

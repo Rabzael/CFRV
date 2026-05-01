@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+<section id="main" class="container">
+  <header>
+    <h2>{% if draft %}DRAFT: {% endif %}{{ title }}</h2>
+    {% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
+  </header>
+  <div class="box">
+    {% if images and images.length %}
+      <span class="image featured"><img src="{{ site.pathPrefix }}{{ images[0] | trimStart('/') }}" alt="" /></span>
+    {% endif %}
+    <div class="page-content">{{ content | safe }}</div>
+    {% if tags or date %}
+      <hr />
+      <div id="meta">
+        {% if date %}<p class="meta">Pubblicato il {{ date }}</p>{% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

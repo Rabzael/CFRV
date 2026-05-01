@@ -1,0 +1,16 @@
+{% if site.params.map and site.params.map.service == 'osm' %}
+  <div id="map" class="box"></div>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{ site.libs.css.leaflet.version }}/dist/leaflet.css" integrity="{{ site.libs.css.leaflet.integrity }}" crossorigin="anonymous" />
+  <script src="https://unpkg.com/leaflet@{{ site.libs.js.leaflet.version }}/dist/leaflet.js" integrity="{{ site.libs.js.leaflet.integrity }}" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var loc = [{{ site.params.map.latitude }}, {{ site.params.map.longitude }}];
+      var mymap = L.map('map').setView(loc, {{ site.params.map.zoom }});
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: {{ site.params.map.zoom }}
+      }).addTo(mymap);
+      L.marker(loc).addTo(mymap);
+    });
+  </script>
+{% endif %}

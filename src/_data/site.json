@@ -1,0 +1,49 @@
+{
+  "title": "Coetus Fidelium San Remigio",
+  "subtitle": "Liturgia Tridentina a Verona",
+  "logo": "img/logo.jpg",
+  "languageCode": "it",
+  "baseUrl": "https://www.sanremigioverona.org/nuovo/",
+  "pathPrefix": "/nuovo/",
+  "customCSS": ["css/cfrv.css"],
+  "instant_page": true,
+  "menu": [
+    { "name": "Home", "url": "", "weight": 1 },
+    { "name": "Orari", "url": "orari/", "weight": 2 },
+    {
+      "name": "Chi siamo",
+      "url": "presentazione/",
+      "weight": 3,
+      "children": [
+        { "name": "Il Coetus", "url": "presentazione/", "weight": 4 },
+        { "name": "Il Sacerdote", "url": "celebrante/", "weight": 5 },
+        { "name": "Eventi", "url": "", "weight": 6 }
+      ]
+    },
+    { "name": "Collegamenti", "url": "", "weight": 6 },
+    { "name": "Contatti", "url": "contatti/", "weight": 7 }
+  ],
+  "links": [
+    { "service": "Facebook", "icon": "fa-facebook", "icon_pack": "fab", "link": "//facebook.com/" },
+    { "service": "Telegram", "icon": "fa-telegram", "icon_pack": "fab", "link": "//telegram.com/" }
+  ],
+  "params": {
+    "map": {
+      "service": "osm",
+      "latitude": "45.433527",
+      "longitude": "11.006372",
+      "zoom": "18"
+    },
+    "contact": {
+      "service": "php"
+    },
+    "footer": {
+      "copyright": [
+        "Associazione Coetus Fidelium San Remigio",
+        "Via Orti Manara, 7 - 37121, Verona (VR)",
+        "info@sanremigioverona.org",
+        "Privacy & Cookie Policy: su questo sito non raccogliamo dati degli utenti né usiamo cookie."
+      ]
+    }
+  }
+}

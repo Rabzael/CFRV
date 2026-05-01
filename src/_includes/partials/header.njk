@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ site.languageCode }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ subtitle or site.subtitle }}" />
+    <link rel="stylesheet" href="{{ site.pathPrefix }}css/style.css" />
+    {% for css in site.customCSS %}
+      <link rel="stylesheet" href="{{ site.pathPrefix }}{{ css }}" />
+    {% endfor %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  </head>

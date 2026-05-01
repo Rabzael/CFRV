@@ -1,0 +1,26 @@
+{
+  "js": {
+    "leaflet": {
+      "version": "1.9.3",
+      "integrity": "sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    },
+    "plyr": {
+      "version": "3.7.8",
+      "integrity": "sha512-CXGbF3dJwjf6VoLTAitzgDvMH4Hck+s3qJJeq7Klbg0NnFWfyD5rxoK4Z0JGMv+BIlxKJwESN/8RNaqr1/cxQQ=="
+    },
+    "instantpage": {
+      "version": "5.2.0",
+      "integrity": "sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"
+    }
+  },
+  "css": {
+    "leaflet": {
+      "version": "1.9.3",
+      "integrity": "sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    },
+    "plyr": {
+      "version": "3.7.8",
+      "integrity": "sha512-uPqDOam5vjVgnASE75fCgMtdLa3oK2+3muDU5ESulSImHAA0Z0xjEnuJpKowTsXUWY09MsYre48zgBFwh2P/yw=="
+    }
+  }
+}

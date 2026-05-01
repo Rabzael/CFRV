@@ -1,0 +1,64 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+{% include "partials/banner.njk" %}
+<section id="main" class="container">
+  {% if services.title %}
+    <section class="box special">
+      <header class="major">
+        <h2>{{ services.title }}</h2><a name="services"></a>
+        <p>{{ services.text }}</p>
+      </header>
+      {% include "partials/map.njk" %}
+    </section>
+  {% endif %}
+
+  {% if feature_icons.enable %}
+    <a name="feature-icons"></a>
+    <section class="box special features">
+      <div class="features-row">
+        {% for tile in feature_icons.tile %}
+          <section>
+            {% if tile.url %}<a href="{{ site.pathPrefix }}{{ tile.url | trimStart('/') }}"><div>{% endif %}
+              <span class="icon major {{ tile.icon_pack }} {{ tile.icon }} accent{{ tile.accent }}"></span>
+              <h3>{{ tile.title }}</h3>
+              <p>{{ tile.text }}</p>
+            {% if tile.url %}</div></a>{% endif %}
+          </section>
+          {% if loop.index0 is odd and not loop.last %}</div><div class="features-row">{% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if feature_images.enable %}
+    <a name="feature-images"></a>
+    <div class="row">
+      {% for tile in feature_images.tile %}
+        <div class="col-6 col-12-narrower">
+          <section class="box special">
+            {% if tile.image %}
+              <span class="image featured"><img src="{{ site.pathPrefix }}{{ tile.image | trimStart('/') }}" alt="" /></span>
+            {% endif %}
+            <h3>{{ tile.title }}</h3>
+            <p>{{ tile.text }}</p>
+            {% if tile.button_text %}
+              <ul class="actions special">
+                <li><a href="{{ site.pathPrefix }}{{ tile.url | trimStart('/') }}" class="button alt">{{ tile.button_text }}</a></li>
+              </ul>
+            {% endif %}
+          </section>
+        </div>
+        {% if loop.index0 is odd and not loop.last %}</div><div class="row">{% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+{% if CTA.enable %}
+  <section id="cta"><a name="call-to-action"></a>
+    {% if CTA.heading %}<h2>{{ CTA.heading }}</h2>{% endif %}
+    {% if CTA.message %}<p>{{ CTA.message }}</p>{% endif %}
+    {% include "partials/contact.njk" %}
+  </section>
+{% endif %}
+{% endblock %}

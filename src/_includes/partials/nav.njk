@@ -1,0 +1,23 @@
+<body {% if page.url == '/' %}class="landing"{% endif %}>
+  <div id="page-wrapper">
+    <header id="header" {% if page.url == '/' %}class="alt"{% endif %}>
+      <a href="{{ site.pathPrefix }}"><img src="{{ site.pathPrefix }}{{ site.logo | trimStart('/') }}" alt="{{ site.title }}" /></a>
+      <nav id="nav">
+        <ul>
+          {% for item in site.menu %}
+            {% if item.children %}
+              <li>
+                <a href="{{ site.pathPrefix }}{{ item.url }}"><i class="fas fa-angle-down"></i> {{ item.name }}</a>
+                <ul>
+                  {% for child in item.children %}
+                    <li><a href="{{ site.pathPrefix }}{{ child.url }}">{{ child.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li><a href="{{ site.pathPrefix }}{{ item.url }}">{{ item.name }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>

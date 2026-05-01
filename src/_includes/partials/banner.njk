@@ -1,0 +1,11 @@
+<section id="banner">
+  <h2>{{ site.title }}</h2>
+  <p>{{ site.subtitle }}</p>
+  <ul class="actions special">
+    {% if page.banner and page.banner.button %}
+      {% for button in page.banner.button %}
+        <li><a href="{{ site.pathPrefix }}{{ button.url | trimStart('/') }}" class="button {{ button.type }}">{{ button.text }}</a></li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+</section>

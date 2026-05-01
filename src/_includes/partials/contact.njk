@@ -1,0 +1,39 @@
+{% if site.params.contact.text %}
+  <p>{{ site.params.contact.text }}
+  {% if site.params.contact.phone %}
+    <br />
+    <a href="tel:{{ site.params.contact.phone }}" target="_blank" aria-label="{{ site.params.contact.phone }}">
+      <i class="icon fas fa-phone-alt"><span class="label">{{ site.params.contact.phone }}</span></i>
+      {{ site.params.contact.phone }}
+    </a>
+  {% endif %}
+  {% if site.params.contact.mail %}
+    <br />
+    <a href="mailto:{{ site.params.contact.mail }}" target="_blank" aria-label="{{ site.params.contact.mail }}">
+      <i class="icon fas fa-envelope"><span class="label">{{ site.params.contact.mail }}</span></i>
+      {{ site.params.contact.mail }}
+    </a>
+  {% endif %}
+  </p>
+{% endif %}
+
+{% if site.params.contact.service == 'php' %}
+  <form name="contact" method="POST" action="{{ site.pathPrefix }}contact_mail.php">
+    <div class="row gtr-50 gtr-uniform">
+      <div class="col-6 col-12-mobilep">
+        <input type="text" name="name" aria-label="Nome" placeholder="Nome" required />
+      </div>
+      <div class="col-6 col-12-mobilep">
+        <input type="email" name="email" aria-label="Email" placeholder="Email" required />
+      </div>
+      <div class="col-12">
+        <textarea name="message" aria-label="Messaggio" placeholder="Messaggio" rows="6" required></textarea>
+      </div>
+      <div class="col-12">
+        <ul class="actions special">
+          <li><input type="submit" value="Invia" name="send" /></li>
+        </ul>
+      </div>
+    </div>
+  </form>
+{% endif %}

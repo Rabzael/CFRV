@@ -1,0 +1,18 @@
+  <!-- Footer -->
+  <footer id="footer">
+    <ul class="icons">
+      {% for link in site.links %}
+        <li>
+          <a href="{{ link.link }}" target="_blank" aria-label="{{ link.service }}">
+            <i class="icon {{ link.icon_pack }} {{ link.icon }}"><span class="label">{{ link.service }}</span></i>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul class="copyright">
+      {% for line in site.params.footer.copyright %}
+        <li>{{ line }}</li>
+      {% endfor %}
+    </ul>
+  </footer>
+</div>
