@@ -19,6 +19,7 @@
   .btn-light{background:var(--crema);color:var(--bordeaux);}
   .btn-blu{background:var(--blu);color:var(--crema);}
   .placeholder{background-image:repeating-linear-gradient(135deg, oklch(0.9 0.01 75) 0 14px, oklch(0.94 0.008 75) 14px 28px);display:flex;align-items:center;justify-content:center;font:11px monospace;color:var(--testo-tenue);}
+  .text-image-left{float:left;width:220px;margin:0 24px 24px 0;border-radius:2px;display:block;}
   nav{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid oklch(0.88 0.01 75);}
   .brand{display:flex;align-items:center;gap:14px;}
   .brand-mark{width:42px;height:42px;border-radius:50%;background:var(--bordeaux);color:var(--crema);display:flex;align-items:center;justify-content:center;font:600 15px 'Cormorant Garamond',serif;}
@@ -39,7 +40,7 @@
   .card h3{font:600 19px 'Cormorant Garamond',serif;color:var(--testo);margin:8px 0;}
   .card p{font-size:14px;line-height:1.6;color:oklch(0.35 0 0);margin:0;}
   .sacerdote{display:flex;gap:40px;align-items:flex-start;}
-  .sacerdote img.placeholder,.sacerdote .placeholder{width:220px;height:260px;flex:none;border-radius:2px;}
+  .sacerdote img.placeholder,.sacerdote .placeholder{width:220px;height:260px;flex:none;border-radius:2px;background-image: none;}
   .contatti-wrap{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;text-align:left;}
   .contatti-info{font-size:15px;line-height:1.9;}
   .mappa{width:280px;height:150px;}
