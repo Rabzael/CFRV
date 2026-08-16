@@ -36,7 +36,9 @@
   table.orari td{padding:14px 26px;border-bottom:1px solid oklch(0.9 0.01 75);font-size:15px;}
   table.orari td:first-child{font-weight:600;}
   .cards{display:flex;gap:20px;flex-wrap:wrap;}
-  .card{background:var(--crema);border:1px solid oklch(0.86 0.01 75);border-radius:4px;width:270px;padding:24px;}
+  .card{background:var(--crema);border:1px solid oklch(0.86 0.01 75);border-radius:4px;width:270px;padding:24px;position:relative;transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;}
+  .card h3 a::after{content:"";position:absolute;inset:0;} /* rende cliccabile tutto il riquadro */
+  .card:hover,.card:focus-within{background:oklch(1 0 0);border-color:oklch(0.74 0.05 30);box-shadow:0 6px 18px oklch(0.32 0.13 22 / 0.13);transform:translateY(-2px);}
   .card h3{font:600 19px 'Cormorant Garamond',serif;color:var(--testo);margin:8px 0;}
   .card p{font-size:14px;line-height:1.6;color:oklch(0.35 0 0);margin:0;}
   .sacerdote{display:flex;gap:40px;align-items:flex-start;}
@@ -46,8 +48,14 @@
   .mappa{width:280px;height:150px;}
   .social{margin-top:24px;display:flex;gap:18px;justify-content:center;font-weight:500;}
   footer{padding:24px 48px;text-align:center;background:var(--bordeaux);color:oklch(0.9 0.01 75 / 0.8);font-size:13px;}
+  .footer-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;margin-bottom:18px;font-weight:500;}
+  .footer-nav a{color:oklch(0.92 0.01 75);padding:4px 0;}
   @media (max-width: 700px){
     nav, .container, .section{padding-left:20px;padding-right:20px;}
     .nav-links{display:none;} /* TODO: aggiungere menu mobile se necessario */
     .sacerdote{flex-direction:column;text-align:center;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .card{transition:none;}
+    .card:hover,.card:focus-within{transform:none;}
   }
