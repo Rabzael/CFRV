@@ -45,7 +45,9 @@
   .sacerdote img.placeholder,.sacerdote .placeholder{width:220px;height:260px;flex:none;border-radius:2px;background-image: none;}
   .contatti-wrap{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;text-align:left;}
   .contatti-info{font-size:15px;line-height:1.9;}
-  .mappa{width:280px;height:150px;}
+  .chiesa-foto{position:relative;width:100%;max-width:640px;height:260px;margin:0 auto 28px;border-radius:6px;overflow:hidden;border:1px solid oklch(0.86 0.01 75);box-shadow:0 10px 26px oklch(0.32 0.13 22 / 0.16);}
+  .chiesa-foto img{width:100%;height:100%;object-fit:cover;display:block;}
+  .chiesa-foto::after{content:"";position:absolute;inset:0;background:var(--bordeaux);mix-blend-mode:color;opacity:.5;pointer-events:none;}
   .social{margin-top:24px;display:flex;gap:18px;justify-content:center;font-weight:500;}
   footer{padding:24px 48px;text-align:center;background:var(--bordeaux);color:oklch(0.9 0.01 75 / 0.8);font-size:13px;}
   .footer-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;margin-bottom:18px;font-weight:500;}
@@ -54,6 +56,7 @@
     nav, .container, .section{padding-left:20px;padding-right:20px;}
     .nav-links{display:none;} /* TODO: aggiungere menu mobile se necessario */
     .sacerdote{flex-direction:column;text-align:center;}
+    .chiesa-foto{height:180px;}
   }
   @media (prefers-reduced-motion: reduce){
     .card{transition:none;}
