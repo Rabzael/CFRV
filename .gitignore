@@ -17,3 +17,6 @@ api/*.log
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+# Altri file
+bidone/
