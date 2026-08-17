@@ -1,0 +1,21 @@
+# Cartella dei dati scritti dal webhook. Contiene solo orari.json.
+#
+# orari.json contiene testo non fidato preso da una chat: se il browser lo
+# interpretasse come HTML sulla nostra stessa origine sarebbe XSS stored.
+# Content-Type esplicito + nosniff chiudono quella strada.
+
+<IfModule mod_mime.c>
+  AddType application/json .json
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Niente listing della cartella.
+Options -Indexes
+
+# I temporanei della scrittura atomica non devono mai essere serviti.
+<FilesMatch "\.tmp$">
+  Require all denied
+</FilesMatch>

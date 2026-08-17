@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<script src="js/orari.js" defer></script>
 
 </head>
 <body>
@@ -63,10 +64,16 @@
       <div><a href="https://www.openstreetmap.org/#map=19/45.442985/10.994966" target="_blank">Indicazioni</a></div>
     </div>
     <p style="font-weight:600;color:var(--blu);margin:0 0 28px;"></p>
-    <table class="orari">
-      <!-- Aggiungere/modificare righe per nuovi orari -->
-      <tr><td>Domenica e festivi</td><td style="text-align:right;">Messa ore 9:00</td></tr>
-    </table>
+    <!-- js/orari.js sostituisce il contenuto di questo blocco con l'ultimo
+         messaggio del canale @Messe_Verona, se fresco e valido. Senza JS, o
+         se qualcosa va storto, resta la tabella qui sotto: è lo stato corretto,
+         non un ripiego. Vedi PIANO-orari-telegram.md § Front-end. -->
+    <div id="orari-blocco">
+      <table class="orari">
+        <!-- Aggiungere/modificare righe per nuovi orari -->
+        <tr><td>Domenica e festivi</td><td style="text-align:right;">Messa ore 9:00</td></tr>
+      </table>
+    </div>
     <p style="font-size:14px;color:var(--testo-tenue);margin:24px 0 0;">Per aggiornamenti e orari delle altre celebrazioni in Diocesi, consulta il nostro canale:</p>
     <a href="https://t.me/Messe_Verona" class="btn btn-blu" style="margin-top:12px;">Canale Telegram CFRV</a>
   </div>

@@ -1,0 +1,19 @@
+# Segreti — mai in git. Un repo senza remote prima o poi ne acquista uno, e
+# una volta che il token è in un commit toglierlo richiede riscrivere la storia.
+# Il modello versionato è api/config.sample.php.
+api/config.php
+
+# Stato di runtime, scritto da PHP in produzione.
+data/orari.json
+data/*.tmp
+api/*.log
+
+# Avanzi degli editor: su Aruba un config.php~ verrebbe servito in chiaro.
+*.bak
+*~
+*.orig
+*.swp
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

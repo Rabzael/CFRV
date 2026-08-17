@@ -58,6 +58,11 @@
     .sacerdote{flex-direction:column;text-align:center;}
     .chiesa-foto{height:180px;}
   }
+  /* Orari dinamici da Telegram (js/orari.js): valori copiati da table.orari
+     così il blocco dinamico è indistinguibile da quello statico. */
+  .orari-dinamici{background:var(--crema);border:1px solid oklch(0.86 0.01 75);border-radius:4px;padding:14px 26px;text-align:left;}
+  .orari-dinamici p{margin:0;font-size:15px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;}
+  .orari-aggiornato{margin:12px 0 0;letter-spacing:.08em;}
   @media (prefers-reduced-motion: reduce){
     .card{transition:none;}
     .card:hover,.card:focus-within{transform:none;}
