@@ -1,45 +1,24 @@
 # Sito CFRV
 
-Sito internet in produzione per un'associazione reale ([sanremigioverona.org](https://sanremigioverona.org)),
-sviluppato e mantenuto da me dalla progettazione al rilascio. Lo includo tra i progetti di
-portfolio perché mostra come lavoro anche fuori dal mio ambito abituale — il front-end — con lo
-stesso metodo che porterei in un ruolo da architect: partire dai vincoli reali (hosting condiviso,
-nessun processo persistente), esplicitare i rischi prima di scrivere codice, e documentare le
-decisioni così che restino leggibili a chi le riprende in mano dopo.
+Sito internet in produzione per un'associazione reale ([sanremigioverona.org](https://sanremigioverona.org)), sviluppato e mantenuto da me dalla progettazione al rilascio. Lo includo tra i progetti di portfolio perché mostra come lavoro anche fuori dal mio ambito abituale con lo stesso metodo che porterei in un ruolo da architect: partire dai vincoli reali (hosting condiviso, nessun processo persistente), esplicitare i rischi prima di scrivere codice, e documentare le decisioni così che restino leggibili a chi le riprende in mano dopo.
 
-Il documento di progettazione — [`PIANO-orari-telegram.md`](PIANO-orari-telegram.md) — è la parte
-che meglio rappresenta questo approccio: architettura, fasi di rilascio verificabili singolarmente,
-matrice dei rischi (R1-R4) con relative mitigazioni, quattro livelli di verifica dal più isolato
-(logica pura, riga di comando) al più end-to-end (canale Telegram reale).
+Il documento di progettazione — [`PIANO-orari-telegram.md`](PIANO-orari-telegram.md) — è la parte che meglio rappresenta questo approccio: architettura, fasi di rilascio verificabili singolarmente, matrice dei rischi (R1-R4) con relative mitigazioni, quattro livelli di verifica dal più isolato (logica pura, riga di comando) al più end-to-end (canale Telegram reale).
 
-Gran parte del codice è stata scritta con il supporto di strumenti di IA generativa, sotto la mia
-direzione: architettura, decisioni di design e revisione di ogni funzione restano mie, verificate
-a ogni passaggio prima di essere accettate. Lo dichiaro apertamente perché saperlo dirigere e
-controllare con disciplina — non delegare a scatola chiusa — è una competenza che considero parte
-del lavoro da architect, non qualcosa da nascondere.
+Gran parte del codice è stata scritta con il supporto di strumenti di IA generativa, sotto la mia direzione: architettura, decisioni di design e revisione di ogni funzione restano mie, verificate a ogni passaggio prima di essere accettate. Lo dichiaro apertamente perché saperlo dirigere e
+controllare con disciplina — non delegare a scatola chiusa — è una competenza che considero parte del lavoro da architect, non qualcosa da nascondere.
 
 **Stack**: HTML/CSS/JS scritti a mano, senza framework né build step; PHP puro sul backend.
 Nessuna dipendenza da installare, deploy via FTP su hosting condiviso.
 
 **Un paio di scelte tecniche di cui vado più soddisfatto:**
 
-- **Il sito funziona anche senza JavaScript.** La sezione orari mostra una tabella statica per
-  difetto; uno script la sostituisce con l'ultimo messaggio di un canale Telegram solo dopo aver
-  ricevuto ed elaborato dati validi — mai una sezione vuota nel frattempo, mai un `<noscript>`
-  come ripiego.
-- **Difesa dall'XSS strutturale, non un filtro.** Il testo del canale Telegram è contenuto non
-  fidato: sul frontend viene inserito nel DOM solo con `textContent`, mai `innerHTML` — per
-  costruzione non può essere interpretato come markup, non serve sanificarlo.
-- **La logica "quando pubblicare / ritirare / ignorare" un aggiornamento** è isolata in un'unica
-  funzione PHP pura, testabile da riga di comando senza rete, senza Telegram, senza filesystem.
-- **Scrittura su disco atomica** (file temporaneo + `rename()`) e verifica del segreto del webhook
-  a tempo costante (`hash_equals`), per evitare sia corruzione sia timing attack banali.
-- Architettura vincolata ai limiti reali dell'hosting (PHP puro, niente Node/Python in
-  produzione, niente cron) invece che a un ambiente ideale immaginato a tavolino.
+- **Il sito funziona anche senza JavaScript.** La sezione orari mostra una tabella statica per difetto; uno script la sostituisce con l'ultimo messaggio di un canale Telegram solo dopo aver ricevuto ed elaborato dati validi — mai una sezione vuota nel frattempo, mai un `<noscript>` come ripiego.
+- **Difesa dall'XSS strutturale, non un filtro.** Il testo del canale Telegram è contenuto non fidato: sul frontend viene inserito nel DOM solo con `textContent`, mai `innerHTML` — per costruzione non può essere interpretato come markup, non serve sanificarlo.
+- **La logica "quando pubblicare / ritirare / ignorare" un aggiornamento** è isolata in un'unica funzione PHP pura, testabile da riga di comando senza rete, senza Telegram, senza filesystem.
+- **Scrittura su disco atomica** (file temporaneo + `rename()`) e verifica del segreto del webhook a tempo costante (`hash_equals`), per evitare sia corruzione sia timing attack banali.
+- Architettura vincolata ai limiti reali dell'hosting (PHP puro, niente Node/Python in produzione, niente cron) invece che a un ambiente ideale immaginato a tavolino.
 
-Il resto di questo file è la documentazione operativa reale del progetto — chi pubblica sul
-canale Telegram e chi gestisce il sito la usano per lavorarci davvero, non è scritta per
-questa presentazione.
+Il resto di questo file è la documentazione operativa reale del progetto — chi pubblica sul canale Telegram e chi gestisce il sito la usano per lavorarci davvero, non è scritta per questa presentazione.
 
 ---
 
